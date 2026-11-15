@@ -798,3 +798,16 @@ textarea.invalid {
 .install-dismiss:hover {
   color: var(--ink);
 }
+
+.hero-verse {
+  margin: 1.25rem auto 1.75rem;
+  max-width: 34rem;
+  padding: 0.9rem 1.25rem;
+  border-left: 3px solid #d4a64a;
+  background: rgba(0, 0, 0, 0.25);
+  border-radius: 6px;
+  text-align: left;
+  font-style: italic;
+}
+.hero-verse p { margin: 0 0 0.4rem; line-height: 1.5; }
+.hero-verse cite { display: block; font-style: normal; font-weight: 600; color: #d4a64a; letter-spacing: 0.04em; }
