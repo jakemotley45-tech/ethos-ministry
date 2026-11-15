@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Ethos Ministry — a welcoming church community. Watch live streams and submit a prayer card.">
+  <title>Ethos Ministry</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header">
+    <div class="header-inner">
+      <a class="logo" href="#top">Ethos Ministry</a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="site-nav" aria-label="Open menu">
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+        <span class="nav-toggle-bar"></span>
+      </button>
+      <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#watch">Watch Live</a>
+        <a href="#prayer" class="nav-cta">Prayer Card</a>
+        <a href="#times">Service Times</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="main">
+    <section class="hero" id="top">
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-inner">
+        <p class="eyebrow">Welcome home</p>
+        <h1>Ethos Ministry</h1>
+        <p class="hero-lead">You are warmly welcome here — whether you are walking through the doors or joining us online. Come as you are. We are glad you are with us.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="#watch">Watch Live</a>
+          <a class="btn btn-outline" href="#prayer">Submit a Prayer Card</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-watch" id="watch">
+      <div class="container">
+        <p class="eyebrow">Join us online</p>
+        <h2>Watch Live</h2>
+        <p class="section-intro">Gather with us from wherever you are. Choose a stream below, then scroll down to share a prayer card if you would like us to pray with you.</p>
+
+        <div class="stream-buttons">
+          <a class="stream-btn stream-youtube" id="youtube-live-link" href="https://www.youtube.com/@thegrrgospelrockinradio9795/live" target="_blank" rel="noopener noreferrer">
+            <span class="stream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M23.5 6.2a3.05 3.05 0 0 0-2.15-2.16C19.5 3.6 12 3.6 12 3.6s-7.5 0-9.35.44A3.05 3.05 0 0 0 .5 6.2 32 32 0 0 0 0 12a32 32 0 0 0 .5 5.8 3.05 3.05 0 0 0 2.15 2.16C4.5 20.4 12 20.4 12 20.4s7.5 0 9.35-.44a3.05 3.05 0 0 0 2.15-2.16A32 32 0 0 0 24 12a32 32 0 0 0-.5-5.8zM9.6 15.6V8.4L15.8 12l-6.2 3.6z"/></svg>
+            </span>
+            <span class="stream-copy">
+              <strong>Watch Live on YouTube</strong>
+              <span>The GRR Gospel Rockin Radio</span>
+            </span>
+          </a>
+          <a class="stream-btn stream-facebook" id="facebook-live-link" href="https://www.facebook.com/share/g/1PnoaVJChJ/" target="_blank" rel="noopener noreferrer">
+            <span class="stream-icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="28" height="28" fill="currentColor"><path d="M14.5 8.5V6.8c0-.7.5-1.3 1.2-1.3H17V3h-2.2C12.5 3 11 4.6 11 6.6v1.9H9v2.7h2V21h3.5v-9.8h2.3l.5-2.7h-2.8z"/></svg>
+            </span>
+            <span class="stream-copy">
+              <strong>Watch on Facebook</strong>
+              <span>Join the Facebook group where we gather and stream</span>
+            </span>
+          </a>
+        </div>
+        <p class="channel-link-wrap">Prefer to browse past videos? <a id="youtube-channel-link" href="https://www.youtube.com/@thegrrgospelrockinradio9795" target="_blank" rel="noopener noreferrer">Visit the YouTube channel</a>.</p>
+
+        <div class="embed-wrap" id="youtube-embed-wrap" hidden>
+          <div class="embed-frame">
+            <iframe id="youtube-embed" title="Ethos Ministry live stream" src="" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+          </div>
+        </div>
+        <p class="embed-placeholder" id="embed-placeholder" hidden>A live video embed will appear here once a YouTube video ID is added in <code>script.js</code>.</p>
+      </div>
+    </section>
+
+    <section class="section section-prayer" id="prayer">
+      <div class="container container-narrow">
+        <p class="eyebrow">We would be honored to pray with you</p>
+        <h2>Submit a Prayer Card</h2>
+        <p class="section-intro">If you are watching online — or simply carrying something heavy — share a prayer request with us. You may remain anonymous, and you can choose whether your request stays with the prayer team or may be lifted up publicly.</p>
+
+        <form id="prayer-form" class="prayer-form" novalidate>
+          <div class="form-row">
+            <label for="prayer-name">Your name <span class="optional">(optional)</span></label>
+            <input type="text" id="prayer-name" name="name" autocomplete="name" maxlength="120" placeholder="First and last name, if you like">
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="pray-anonymously" name="anonymous" value="yes">
+            <label for="pray-anonymously">Pray anonymously — do not include my name</label>
+          </div>
+
+          <div class="form-row">
+            <label for="prayer-email">Email <span class="optional">(optional, for follow-up)</span></label>
+            <input type="email" id="prayer-email" name="email" autocomplete="email" maxlength="200" placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="prayer-request">Prayer request <span class="required">(required)</span></label>
+            <textarea id="prayer-request" name="request" required rows="6" maxlength="4000" placeholder="Share what you would like us to pray for."></textarea>
+            <p class="field-error" id="request-error" hidden>Please enter a prayer request before submitting.</p>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>How should we handle this request?</legend>
+            <label class="radio-option">
+              <input type="radio" name="visibility" value="prayer-team-only" checked>
+              <span>Share with the prayer team only</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="visibility" value="okay-to-pray-publicly">
+              <span>Okay to pray for publicly</span>
+            </label>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="prayer-city">Watching online from <span class="optional">(city, optional)</span></label>
+            <input type="text" id="prayer-city" name="city" maxlength="120" placeholder="City or community" autocomplete="address-level2">
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-submit" id="prayer-submit">Submit a Prayer Card</button>
+          <p class="form-note">Your request goes to the Ethos Ministry prayer team.</p>
+        </form>
+
+        <div class="thank-you" id="thank-you" hidden role="status" aria-live="polite">
+          <h3>Thank you. We have received your prayer card.</h3>
+          <p>We are grateful you trusted us with this. Our prayer team will hold your request with care. May you know you are not alone.</p>
+          <button type="button" class="btn btn-outline" id="submit-another">Submit another prayer card</button>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer" id="times">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <p class="footer-name">Ethos Ministry</p>
+          <p class="footer-welcome">A community of welcome, worship, and prayer.</p>
+        </div>
+        <div>
+          <h3>Service Time</h3>
+          <ul class="service-times">
+            <li>Sunday Worship — 12:30 PM</li>
+          </ul>
+        </div>
+        <div>
+          <h3>Visit &amp; Contact</h3>
+          <p class="footer-address">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=1101+Radio+Ave+Harrison+AR" target="_blank" rel="noopener noreferrer">
+              1101 Radio Ave<br>Harrison, AR
+            </a>
+          </p>
+          <p class="map-link">
+            <a href="https://www.google.com/maps/search/?api=1&amp;query=1101+Radio+Ave+Harrison+AR" target="_blank" rel="noopener noreferrer">Get directions</a>
+          </p>
+          <p class="placeholder-text">[Add phone number]</p>
+          <p class="placeholder-text">[Add church email]</p>
+        </div>
+      </div>
+      <p class="copyright">© Ethos Ministry. All are welcome.</p>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
