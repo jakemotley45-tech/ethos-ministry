@@ -15,7 +15,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css?v=6">
+  <link rel="stylesheet" href="styles.css?v=7">
 </head>
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
@@ -29,9 +29,9 @@
         <span class="nav-toggle-bar"></span>
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
+        <a href="#prayer" class="nav-cta">Prayer Card</a>
         <a href="#watch">Watch Live</a>
         <a href="#gallery">Photos</a>
-        <a href="#prayer" class="nav-cta">Prayer Card</a>
         <a href="#times">Service Times</a>
       </nav>
     </div>
@@ -49,8 +49,65 @@
           <cite>Matthew 28:19</cite>
         </blockquote>
         <div class="hero-actions">
-          <a class="btn btn-gold" href="#watch">Watch Live</a>
-          <a class="btn btn-outline" href="#prayer">Submit a Prayer Card</a>
+          <a class="btn btn-gold" href="#prayer">Submit a Prayer Card</a>
+          <a class="btn btn-outline" href="#watch">Watch Live</a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section section-prayer" id="prayer">
+      <div class="container container-narrow">
+        <p class="eyebrow">We would be honored to pray with you</p>
+        <h2>Submit a Prayer Card</h2>
+        <p class="section-intro">If you are watching online — or simply carrying something heavy — share a prayer request with us. You may remain anonymous, and you can choose whether your request stays with the prayer team or may be lifted up publicly.</p>
+
+        <form id="prayer-form" class="prayer-form" novalidate>
+          <div class="form-row">
+            <label for="prayer-name">Your name <span class="optional">(optional)</span></label>
+            <input type="text" id="prayer-name" name="name" autocomplete="name" maxlength="120" placeholder="First and last name, if you like">
+          </div>
+
+          <div class="form-check">
+            <input type="checkbox" id="pray-anonymously" name="anonymous" value="yes">
+            <label for="pray-anonymously">Pray anonymously — do not include my name</label>
+          </div>
+
+          <div class="form-row">
+            <label for="prayer-email">Email <span class="optional">(optional, for follow-up)</span></label>
+            <input type="email" id="prayer-email" name="email" autocomplete="email" maxlength="200" placeholder="you@example.com">
+          </div>
+
+          <div class="form-row">
+            <label for="prayer-request">Prayer request <span class="required">(required)</span></label>
+            <textarea id="prayer-request" name="request" required rows="6" maxlength="4000" placeholder="Share what you would like us to pray for."></textarea>
+            <p class="field-error" id="request-error" hidden>Please enter a prayer request before submitting.</p>
+          </div>
+
+          <fieldset class="form-fieldset">
+            <legend>How should we handle this request?</legend>
+            <label class="radio-option">
+              <input type="radio" name="visibility" value="prayer-team-only" checked>
+              <span>Share with the prayer team only</span>
+            </label>
+            <label class="radio-option">
+              <input type="radio" name="visibility" value="okay-to-pray-publicly">
+              <span>Okay to pray for publicly</span>
+            </label>
+          </fieldset>
+
+          <div class="form-row">
+            <label for="prayer-city">Watching online from <span class="optional">(city, optional)</span></label>
+            <input type="text" id="prayer-city" name="city" maxlength="120" placeholder="City or community" autocomplete="address-level2">
+          </div>
+
+          <button type="submit" class="btn btn-gold btn-submit" id="prayer-submit">Submit a Prayer Card</button>
+          <p class="form-note">Your request goes to the Ethos Ministry prayer team.</p>
+        </form>
+
+        <div class="thank-you" id="thank-you" hidden role="status" aria-live="polite">
+          <h3>Thank you. We have received your prayer card.</h3>
+          <p>We are grateful you trusted us with this. Our prayer team will hold your request with care. May you know you are not alone.</p>
+          <button type="button" class="btn btn-outline" id="submit-another">Submit another prayer card</button>
         </div>
       </div>
     </section>
@@ -59,7 +116,7 @@
       <div class="container">
         <p class="eyebrow">Join us online</p>
         <h2>Watch Live</h2>
-        <p class="section-intro">Gather with us from wherever you are. Choose a stream below, then scroll down to share a prayer card if you would like us to pray with you.</p>
+        <p class="section-intro">Gather with us from wherever you are. Choose a stream below, or scroll up to share a prayer card if you would like us to pray with you.</p>
 
         <div class="stream-buttons">
           <a class="stream-btn stream-youtube" id="youtube-live-link" href="https://www.youtube.com/@thegrrgospelrockinradio9795/live" target="_blank" rel="noopener noreferrer">
@@ -144,62 +201,6 @@
       </div>
     </section>
 
-    <section class="section section-prayer" id="prayer">
-      <div class="container container-narrow">
-        <p class="eyebrow">We would be honored to pray with you</p>
-        <h2>Submit a Prayer Card</h2>
-        <p class="section-intro">If you are watching online — or simply carrying something heavy — share a prayer request with us. You may remain anonymous, and you can choose whether your request stays with the prayer team or may be lifted up publicly.</p>
-
-        <form id="prayer-form" class="prayer-form" novalidate>
-          <div class="form-row">
-            <label for="prayer-name">Your name <span class="optional">(optional)</span></label>
-            <input type="text" id="prayer-name" name="name" autocomplete="name" maxlength="120" placeholder="First and last name, if you like">
-          </div>
-
-          <div class="form-check">
-            <input type="checkbox" id="pray-anonymously" name="anonymous" value="yes">
-            <label for="pray-anonymously">Pray anonymously — do not include my name</label>
-          </div>
-
-          <div class="form-row">
-            <label for="prayer-email">Email <span class="optional">(optional, for follow-up)</span></label>
-            <input type="email" id="prayer-email" name="email" autocomplete="email" maxlength="200" placeholder="you@example.com">
-          </div>
-
-          <div class="form-row">
-            <label for="prayer-request">Prayer request <span class="required">(required)</span></label>
-            <textarea id="prayer-request" name="request" required rows="6" maxlength="4000" placeholder="Share what you would like us to pray for."></textarea>
-            <p class="field-error" id="request-error" hidden>Please enter a prayer request before submitting.</p>
-          </div>
-
-          <fieldset class="form-fieldset">
-            <legend>How should we handle this request?</legend>
-            <label class="radio-option">
-              <input type="radio" name="visibility" value="prayer-team-only" checked>
-              <span>Share with the prayer team only</span>
-            </label>
-            <label class="radio-option">
-              <input type="radio" name="visibility" value="okay-to-pray-publicly">
-              <span>Okay to pray for publicly</span>
-            </label>
-          </fieldset>
-
-          <div class="form-row">
-            <label for="prayer-city">Watching online from <span class="optional">(city, optional)</span></label>
-            <input type="text" id="prayer-city" name="city" maxlength="120" placeholder="City or community" autocomplete="address-level2">
-          </div>
-
-          <button type="submit" class="btn btn-gold btn-submit" id="prayer-submit">Submit a Prayer Card</button>
-          <p class="form-note">Your request goes to the Ethos Ministry prayer team.</p>
-        </form>
-
-        <div class="thank-you" id="thank-you" hidden role="status" aria-live="polite">
-          <h3>Thank you. We have received your prayer card.</h3>
-          <p>We are grateful you trusted us with this. Our prayer team will hold your request with care. May you know you are not alone.</p>
-          <button type="button" class="btn btn-outline" id="submit-another">Submit another prayer card</button>
-        </div>
-      </div>
-    </section>
   </main>
 
   <footer class="site-footer" id="times">
@@ -254,6 +255,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=6"></script>
+  <script src="script.js?v=7"></script>
 </body>
 </html>
