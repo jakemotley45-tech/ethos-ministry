@@ -49,7 +49,7 @@ To collect requests on the web instead of email:
 
 Service time and the street address are already filled in:
 
-- Sunday Worship at 12:30 PM
+- Sunday Worship at 12:30 PM and Thursday Service at 6:30 PM
 - 1101 Radio Ave, Harrison, AR 72601, with a Google Maps directions link
 
 In the footer of `index.html`, these are still clearly marked placeholders:
