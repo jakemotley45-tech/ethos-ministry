@@ -30,6 +30,7 @@
       </button>
       <nav id="site-nav" class="site-nav" aria-label="Primary">
         <a href="#watch">Watch Live</a>
+        <a href="#gallery">Gallery</a>
         <a href="#prayer" class="nav-cta">Prayer Card</a>
         <a href="#times">Service Times</a>
       </nav>
@@ -88,6 +89,43 @@
           </div>
         </div>
         <p class="embed-placeholder" id="embed-placeholder" hidden>A live video embed will appear here once a YouTube video ID is added in <code>script.js</code>.</p>
+      </div>
+    </section>
+
+
+    <section class="section section-gallery" id="gallery">
+      <div class="container">
+        <p class="eyebrow">In the Community</p>
+        <h2>In the Community</h2>
+        <p class="section-intro">Moments from our ministry events in Harrison.</p>
+
+        <ul class="gallery-grid">
+          <li>
+            <button type="button" class="gallery-item" data-full="images/gallery/01-bass.jpg" aria-label="Open photo: A bass player performing on an outdoor stage under a blue sky">
+              <img src="images/gallery/01-bass-thumb.jpg" alt="A bass player performing on an outdoor stage under a blue sky" width="488" height="600" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-full="images/gallery/02-sunset.jpg" aria-label="Open photo: A performer rapping into a microphone on an outdoor stage at sunset">
+              <img src="images/gallery/02-sunset-thumb.jpg" alt="A performer rapping into a microphone on an outdoor stage at sunset" width="452" height="600" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-full="images/gallery/03-sky.jpg" aria-label="Open photo: A performer on an outdoor stage singing into a microphone and pointing toward the sky">
+              <img src="images/gallery/03-sky-thumb.jpg" alt="A performer on an outdoor stage singing into a microphone and pointing toward the sky" width="450" height="600" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-full="images/gallery/04-lights.jpg" aria-label="Open photo: A performer on stage under colorful lights and smoke, holding a microphone">
+              <img src="images/gallery/04-lights-thumb.jpg" alt="A performer on stage under colorful lights and smoke, holding a microphone" width="412" height="600" loading="lazy">
+            </button>
+          </li>
+          <li>
+            <button type="button" class="gallery-item" data-full="images/gallery/05-scoreboard.jpg" aria-label="Open photo: A singer performing on a night stage in front of a Harrison scoreboard">
+              <img src="images/gallery/05-scoreboard-thumb.jpg" alt="A singer performing on a night stage in front of a Harrison scoreboard" width="482" height="600" loading="lazy">
+            </button>
+          </li>
+        </ul>
       </div>
     </section>
 
@@ -179,6 +217,20 @@
     </div>
   </footer>
 
+
+  <div class="lightbox" id="lightbox" hidden role="dialog" aria-modal="true" aria-label="Photo viewer">
+    <button type="button" class="lightbox-close" id="lightbox-close" aria-label="Close photo">Close</button>
+    <button type="button" class="lightbox-nav lightbox-prev" id="lightbox-prev" aria-label="Previous photo">
+      <span aria-hidden="true">‹</span>
+    </button>
+    <figure class="lightbox-figure">
+      <img id="lightbox-image" alt="">
+    </figure>
+    <button type="button" class="lightbox-nav lightbox-next" id="lightbox-next" aria-label="Next photo">
+      <span aria-hidden="true">›</span>
+    </button>
+  </div>
+
   <div class="install-banner" id="install-banner" hidden>
     <p class="install-copy" id="install-copy">Install Ethos Ministry for quicker access on your phone.</p>
     <div class="install-actions">
@@ -187,6 +239,6 @@
     </div>
   </div>
 
-  <script src="script.js?v=2"></script>
+  <script src="script.js?v=3"></script>
 </body>
 </html>

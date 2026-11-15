@@ -1,10 +1,10 @@
-const CACHE_NAME = "ethos-ministry-shell-v5";
+const CACHE_NAME = "ethos-ministry-shell-v6";
 
 const APP_SHELL = [
   "./",
   "./index.html",
   "./styles.css",
-  "./script.js",
+  "./script.js?v=3",
   "./manifest.webmanifest",
   "./icons/icon-192.png",
   "./icons/icon-512.png",
