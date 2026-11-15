@@ -9,7 +9,7 @@ const CONFIG = {
 
   // Used for the mailto fallback when no form endpoint is configured.
   // PLACEHOLDER: replace with the church prayer email.
-  churchEmail: "jakemotley45@gmail.com",
+  churchEmail: "Tonymarks7373@gmail.com",
 
   // Stream and gathering links for Ethos Ministry / The GRR Gospel Rockin Radio.
   youtubeLiveUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795/live",

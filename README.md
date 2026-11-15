@@ -17,7 +17,7 @@ Open `script.js` and update the `CONFIG` object at the top:
 ```js
 const CONFIG = {
   formspreeEndpoint: "",          // e.g. "https://formspree.io/f/xxxxxxxx"
-  churchEmail: "jakemotley45@gmail.com",  // used for the prayer-card email fallback
+  churchEmail: "Tonymarks7373@gmail.com",  // used for the prayer-card email fallback
   youtubeLiveUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795/live",
   youtubeChannelUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795",
   facebookLiveUrl: "https://www.facebook.com/share/g/1PnoaVJChJ/",
@@ -43,7 +43,7 @@ To collect requests on the web instead of email:
 
 1. Create a free form at [Formspree](https://formspree.io/) (or a similar service such as Basin or Getform).
 2. Paste the form endpoint into `formspreeEndpoint`. Example: `https://formspree.io/f/xxxxxxxx`.
-3. `churchEmail` is already set to jakemotley45@gmail.com for testing prayer cards. The footer church email is still a placeholder and is not shown on the page.
+3. `churchEmail` is already set to Tonymarks7373@gmail.com for testing prayer cards. The footer church email is still a placeholder and is not shown on the page.
 
 ### Other placeholders on the page
 
