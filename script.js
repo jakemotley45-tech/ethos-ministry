@@ -244,9 +244,82 @@ function initForm() {
   if (another) another.addEventListener("click", resetFormView);
 }
 
+function isStandalone() {
+  return (
+    window.matchMedia("(display-mode: standalone)").matches ||
+    window.navigator.standalone === true
+  );
+}
+
+function isIosSafari() {
+  const ua = window.navigator.userAgent || "";
+  const isIOS = /iphone|ipad|ipod/i.test(ua);
+  const isSafari = /safari/i.test(ua) && !/crios|fxios|edgios/i.test(ua);
+  return isIOS && isSafari;
+}
+
+function registerServiceWorker() {
+  if (!("serviceWorker" in navigator)) return;
+  navigator.serviceWorker.register("./sw.js").catch((err) => {
+    console.warn("Service worker registration failed.", err);
+  });
+}
+
+function initInstallPrompt() {
+  const banner = document.getElementById("install-banner");
+  const button = document.getElementById("install-button");
+  const copy = document.getElementById("install-copy");
+  const dismiss = document.getElementById("install-dismiss");
+  if (!banner) return;
+
+  if (isStandalone() || localStorage.getItem("ethos-install-dismissed") === "1") {
+    return;
+  }
+
+  let deferredPrompt = null;
+
+  if (isIosSafari()) {
+    if (copy) copy.textContent = "Tap Share, then Add to Home Screen";
+    if (button) button.hidden = true;
+    banner.hidden = false;
+  }
+
+  window.addEventListener("beforeinstallprompt", (event) => {
+    event.preventDefault();
+    deferredPrompt = event;
+    if (copy) copy.textContent = "Install Ethos Ministry for quicker access on your phone.";
+    if (button) button.hidden = false;
+    banner.hidden = false;
+  });
+
+  if (button) {
+    button.addEventListener("click", async () => {
+      if (!deferredPrompt) return;
+      deferredPrompt.prompt();
+      await deferredPrompt.userChoice.catch(() => {});
+      deferredPrompt = null;
+      banner.hidden = true;
+    });
+  }
+
+  if (dismiss) {
+    dismiss.addEventListener("click", () => {
+      banner.hidden = true;
+      localStorage.setItem("ethos-install-dismissed", "1");
+    });
+  }
+
+  window.addEventListener("appinstalled", () => {
+    banner.hidden = true;
+    deferredPrompt = null;
+  });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
   initNav();
   initAnonymousToggle();
   initForm();
+  registerServiceWorker();
+  initInstallPrompt();
 });

@@ -5,6 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Ethos Ministry — a welcoming church community. Watch live streams and submit a prayer card.">
   <title>Ethos Ministry</title>
+  <meta name="theme-color" content="#1d1814">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-title" content="Ethos">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <link rel="manifest" href="manifest.webmanifest">
+  <link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,500;0,600;0,700;1,500&family=Source+Sans+3:ital,wght@0,400;0,500;0,600;0,700;1,400&display=swap" rel="stylesheet">
@@ -168,6 +175,14 @@
       <p class="copyright">© Ethos Ministry. All are welcome.</p>
     </div>
   </footer>
+
+  <div class="install-banner" id="install-banner" hidden>
+    <p class="install-copy" id="install-copy">Install Ethos Ministry for quicker access on your phone.</p>
+    <div class="install-actions">
+      <button type="button" class="btn btn-gold" id="install-button">Install the app</button>
+      <button type="button" class="install-dismiss" id="install-dismiss">Not now</button>
+    </div>
+  </div>
 
   <script src="script.js"></script>
 </body>

@@ -99,6 +99,10 @@ Then open `http://localhost:8080` in a browser.
 
 After hosting, test the YouTube and Facebook Watch buttons and submit a test prayer card.
 
+## Install the app
+
+The site is a Progressive Web App. On Android Chrome, a small “Install the app” prompt can add it to the home screen. On iPhone Safari, use Share, then Add to Home Screen. The prompt is dismissible and stays hidden once the app is already installed. A service worker caches the main pages and styles so the app shell can still open offline. Prayer form submissions and outside links (YouTube, Facebook, maps, fonts) are not cached.
+
 ## License
 
 Built for Ethos Ministry. Update the footer contact details and stream links before sharing the site publicly.
