@@ -49,7 +49,7 @@ To collect requests on the web instead of email:
 
 Service time and the street address are already filled in:
 
-- Sunday Worship at 12:30 PM and Thursday Worship at 6:30 PM
+- Sunday Worship with a meal at 12:30 PM, Tuesday Discipleship Class at 6:00 PM, and Thursday Worship with a meal at 6:30 PM
 - 1101 Radio Ave, Harrison, AR 72601, with a Google Maps directions link
 
 In the footer of `index.html`, these are still clearly marked placeholders:

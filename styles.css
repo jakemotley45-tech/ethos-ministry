@@ -980,7 +980,7 @@ body.lightbox-open {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 1rem;
-  max-width: 560px;
+  max-width: 860px;
   margin: 1.25rem auto 0;
 }
 .time-card {
@@ -996,3 +996,13 @@ body.lightbox-open {
 .time-hour { font-family: var(--font-serif); font-size: 2.2rem; line-height: 1.2; color: var(--ink); }
 .time-label { color: var(--muted); }
 .times-address { margin: 1.25rem 0 0; }
+.time-meal {
+  margin-top: 0.6rem !important;
+  display: inline-block;
+  padding: 0.15rem 0.7rem;
+  border-radius: 999px;
+  background: var(--gold-soft);
+  color: var(--ink-soft);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
