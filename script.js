@@ -12,7 +12,7 @@ const CONFIG = {
   churchEmail: "Tonymarks7373@gmail.com",
 
   // Stream and gathering links for Ethos Ministry / The GRR Gospel Rockin Radio.
-  youtubeLiveUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795/live",
+  youtubeLiveUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795",
   youtubeChannelUrl: "https://www.youtube.com/@thegrrgospelrockinradio9795",
   facebookLiveUrl: "https://www.facebook.com/share/g/1PnoaVJChJ/",
 
