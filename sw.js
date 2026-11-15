@@ -1,4 +1,4 @@
-const CACHE_NAME = "ethos-ministry-shell-v13";
+const CACHE_NAME = "ethos-ministry-shell-v15";
 
 const APP_SHELL = [
   "./",
