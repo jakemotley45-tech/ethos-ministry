@@ -967,3 +967,10 @@ body.lightbox-open {
     transition: none;
   }
 }
+
+.gallery-heading {
+  margin: 2rem 0 1rem;
+  font-size: 1.35rem;
+  color: inherit;
+}
+.gallery-heading:first-of-type { margin-top: 1.25rem; }
