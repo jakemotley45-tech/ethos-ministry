@@ -1,4 +1,4 @@
-const CACHE_NAME = "ethos-ministry-shell-v15";
+const CACHE_NAME = "ethos-ministry-shell-v16";
 
 const APP_SHELL = [
   "./",
@@ -9,7 +9,8 @@ const APP_SHELL = [
   "./icons/icon-192.png",
   "./icons/icon-512.png",
   "./icons/icon-512-maskable.png",
-  "./icons/apple-touch-icon.png"
+  "./icons/apple-touch-icon.png",
+  "./icons/logo-mark.png"
 ];
 
 self.addEventListener("install", (event) => {

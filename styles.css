@@ -1006,3 +1006,6 @@ body.lightbox-open {
   font-size: 0.85rem;
   font-weight: 600;
 }
+
+.logo { display: inline-flex; align-items: center; gap: 0.55rem; }
+.logo-mark { width: 42px; height: 42px; border-radius: 9px; flex: none; }
