@@ -315,11 +315,107 @@ function initInstallPrompt() {
   });
 }
 
+function initGallery() {
+  const items = Array.from(document.querySelectorAll(".gallery-item"));
+  const lightbox = document.getElementById("lightbox");
+  const image = document.getElementById("lightbox-image");
+  const btnClose = document.getElementById("lightbox-close");
+  const btnPrev = document.getElementById("lightbox-prev");
+  const btnNext = document.getElementById("lightbox-next");
+  if (!items.length || !lightbox || !image) return;
+
+  const photos = items.map((button) => ({
+    src: button.getAttribute("data-full"),
+    alt: (button.querySelector("img") && button.querySelector("img").alt) || ""
+  }));
+
+  let index = 0;
+  let lastFocus = null;
+  let touchStartX = 0;
+
+  function show(nextIndex) {
+    index = (nextIndex + photos.length) % photos.length;
+    image.src = photos[index].src;
+    image.alt = photos[index].alt;
+  }
+
+  function open(nextIndex) {
+    lastFocus = document.activeElement;
+    show(nextIndex);
+    lightbox.hidden = false;
+    document.body.classList.add("lightbox-open");
+    if (btnClose) btnClose.focus();
+  }
+
+  function close() {
+    if (lightbox.hidden) return;
+    lightbox.hidden = true;
+    image.removeAttribute("src");
+    image.alt = "";
+    document.body.classList.remove("lightbox-open");
+    if (lastFocus && typeof lastFocus.focus === "function") lastFocus.focus();
+  }
+
+  items.forEach((button, i) => {
+    button.addEventListener("click", () => open(i));
+  });
+
+  if (btnClose) btnClose.addEventListener("click", close);
+  if (btnPrev) btnPrev.addEventListener("click", () => show(index - 1));
+  if (btnNext) btnNext.addEventListener("click", () => show(index + 1));
+
+  lightbox.addEventListener("click", (event) => {
+    if (event.target === lightbox) close();
+  });
+
+  document.addEventListener("keydown", (event) => {
+    if (lightbox.hidden) return;
+    if (event.key === "Escape") {
+      event.preventDefault();
+      close();
+    } else if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      show(index - 1);
+    } else if (event.key === "ArrowRight") {
+      event.preventDefault();
+      show(index + 1);
+    } else if (event.key === "Tab") {
+      const focusable = [btnClose, btnPrev, btnNext].filter(Boolean);
+      if (!focusable.length) return;
+      const current = document.activeElement;
+      const currentIndex = focusable.indexOf(current);
+      event.preventDefault();
+      if (event.shiftKey) {
+        const prev = currentIndex <= 0 ? focusable.length - 1 : currentIndex - 1;
+        focusable[prev].focus();
+      } else {
+        const next = currentIndex === -1 || currentIndex === focusable.length - 1 ? 0 : currentIndex + 1;
+        focusable[next].focus();
+      }
+    }
+  });
+
+  lightbox.addEventListener("touchstart", (event) => {
+    if (event.changedTouches && event.changedTouches[0]) {
+      touchStartX = event.changedTouches[0].clientX;
+    }
+  }, { passive: true });
+
+  lightbox.addEventListener("touchend", (event) => {
+    if (!event.changedTouches || !event.changedTouches[0]) return;
+    const dx = event.changedTouches[0].clientX - touchStartX;
+    if (Math.abs(dx) > 50) {
+      show(index + (dx < 0 ? 1 : -1));
+    }
+  }, { passive: true });
+}
+
 document.addEventListener("DOMContentLoaded", () => {
   applyConfig();
   initNav();
   initAnonymousToggle();
   initForm();
+  initGallery();
   registerServiceWorker();
   initInstallPrompt();
 });
